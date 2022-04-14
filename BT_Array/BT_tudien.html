@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+    <style>
+table{
+    border: black;
+}
+tr{
+    border: black;
+}
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Nhập từ cần dịch tại đây </td>
+        <td><input type="text" id="input"></td>
+        </tr>
+    <tr> <td>
+        <button onclick="test()">search</button>
+    </td>
+    </tr>
+    <tr>
+        <td><p id="result"></p></td>
+    </tr>
+</table>
+
+<script>
+    let english = ["water", "rose", "book", "pen", "phone", "candy"];
+    let Vietnamese = ["Nước", "hoa", "Sách", "bút", "Điện thoại", "Kẹo"];
+
+    function test() {
+        let keyword = document.getElementById('input').value;
+        let indexVN = -1
+        for (let i = 0; i < english.length; i++) {
+            if (keyword === english[i]) {
+                indexVN = i;
+                break;
+            }
+
+        }
+        if (indexVN === -1) {
+            document.getElementById("result").innerHTML = "Không tìm thấy"
+        } else {
+            document.getElementById("result").innerHTML = "Nghĩa là: "  + Vietnamese[indexVN];
+
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

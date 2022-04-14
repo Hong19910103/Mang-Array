@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng vui</title>
+</head>
+<body>
+<h3> TYPE ANTHING SLOWLY</h3>
+<label for="type">
+    <textarea name="text" id="type" onkeyup="nhap()" cols="30" rows="5"></textarea>
+</label>
+<script>
+    let text = "Tôi là người tài giỏi";
+    let arrays = text.split("");// lấy giá trị mảng thành từng kí tự
+    console.log(arrays);
+    let string =""; // gọi 1 biến rỗng để chứa giá trị nhập từ ô textarea;
+    console.log(arrays);
+
+    function nhap(){ // tạo hàm để chạy thuộc tính onkeyup
+
+        let  x = document.getElementById("type").value;// lấy giá trị nhập từ ô texterea
+        let y = x.length; // lấy độ dài của chuỗi X vừa nhập trên ô nhập giá trị
+
+        if (y>0){ // khi bắt đầu nhập giá trị trên text thì y sẽ lớn hơn 0 bắt đầu vòng lặp
+            for (let i = 0; i < y; i++) { //vòng lặp bắt đầu từ chạy từ 0
+                console.log(i);
+                string+=arrays[i]; // trả lại giá trị của chuỗi bằng giá trị của mảng tương ứng
+                if (i===arrays.length){// khi giá trị nhập vào của i bằng độ dài của chuỗi thì trả về chuỗi trống
+                    string="";
+                    document.getElementById('type').value=string; // trả lại giá trị trống nhập lại từ ban đầu
+                }
+            }
+
+        }
+        document.getElementById('type').value = string; // trả lại giá trị chống trả lại giá trị ban đầu
+        string = "";
+
+    }
+
+</script>
+</body>
+</html>

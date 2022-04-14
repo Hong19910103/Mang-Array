@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị lớn nhất trong mảng</title>
+</head>
+<body>
+<script>
+    // let numbers = [3, 5, 8, 0, 4, -6, 7];
+    // let max = numbers[0];
+    // let index = 0;
+    // for (let i=1;i<numbers.length;i++){
+    //     if(numbers[i]>max){
+    //         max=numbers[i];
+    //         index=i;
+    //     }
+    // }
+    // alert('Max: '+max+ 'ở vị trí:'+ index+ 'trong dãy số ')
+    let numbers = [ 3, 5, 8, 0, 4, -6, 7];
+     let c = numbers.sort(function (a,b){
+        return a-b
+    })
+    console.log(c)
+alert("giá trị lớn nhất của dãy số là: " + c[c.length-1])
+
+</script>
+</body>
+</html>
